@@ -49,7 +49,8 @@ export function Upload() {
     });
 
     uploadTask
-      .then(() => {
+      .then(async () => {
+        const imageUrl = await reference.getDownloadURL();
         Alert.alert("Upload completed");
       })
       .then((err) => {
